@@ -43,6 +43,7 @@ impl Grid {
 
     pub fn count_neighbors(&self, x: usize, y: usize) -> usize {
         let mut count = 0;
+        // This is a toroidal grid, so we wrap around the edges
         for dy in [self.height - 1, 0, 1].iter().cloned() {
             for dx in [self.height - 1, 0, 1].iter().cloned() {
                 // Don't count the current cell in its neighbors
